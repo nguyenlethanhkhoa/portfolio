@@ -20,12 +20,12 @@ const Introduction: React.FC = () => {
                             LET ME <span className="purple"> INTRODUCE </span> MYSELF
                         </h1>
                         <p className="home-about-body">
-                            I fell in love with programming and I have at least learnt
+                            I fell in love with programming, automation and I have at least learnt
                             something, I think… 🤷‍♂️
                             <br />
                             <br />I am fluent in
                             <i>
-                                <b className="purple"> Python, TypeScript and C#. </b>
+                                <b className="purple"> Python, TypeScript, JavaScript and C#. </b>
                             </i>
                             <br />
                             <br />
