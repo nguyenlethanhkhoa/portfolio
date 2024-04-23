@@ -259,7 +259,7 @@ button:focus {
   background-image: var(--image-gradient), url(./home-bg.jpg);
   background-position: top center;
   background-repeat: no-repeat;
-  padding-bottom: 0px !important;
+  padding-bottom: 30px !important;
   padding-top: 30px !important;
 }
 
@@ -284,7 +284,7 @@ button:focus {
 }
 
 .Typewriter__wrapper {
-  font-size: 2.2em !important;
+  font-size: 2em !important;
   color: #be6adf !important;
   font-weight: 600 !important;
 }
@@ -324,7 +324,7 @@ button:focus {
 
 .home-about-description {
   color: white !important;
-  padding-top: 100px !important;
+  padding-top: 40px !important;
   padding-bottom: 20px !important;
   text-align: center;
 }
@@ -564,16 +564,26 @@ button:focus {
   transition: all 0.4s ease 0s !important;
 }
 
+.pointer {
+  cursor: pointer;
+}
+
+.home-about-social.tech-icons {
+  font-size: 6em !important;
+}
+
 @media (max-width: 767px) {
   .tech-icons {
     margin: 10px !important;
+    font-size: 2em !important;
   }
 }
 
 .tech-icons:hover {
   transform: scale(1.05) !important;
   overflow: hidden !important;
-  border: 2.2px solid rgba(197, 115, 230, 0.883) !important;
+  /* border: 2.2px solid rgba(197, 115, 230, 0.883) !important; */
+  box-shadow: 3px 3px 10px 1px rgba(197, 115, 230, 0.883) !important;
 }
 .tech-icon-images {
   padding: 20px !important;

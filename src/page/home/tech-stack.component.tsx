@@ -48,8 +48,7 @@ const TECH_STACK: ITechStack[] = [
         skills: [
             { title: 'Python', icon: <DiPython /> },
             { title: 'Javascript', icon: <DiJavascript1 /> },
-            { title: 'C#', icon: <TbBrandCSharp /> },
-            { title: 'NodeJs', icon: <DiNodejs /> },
+            { title: 'C#', icon: <TbBrandCSharp /> }
         ]
     },
     {
@@ -106,7 +105,7 @@ const Techstack: React.FC = () => {
                     </h1>
                     <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
                         {stack.skills.map((skill) => (
-                            <Col xs={2} md={2} className="tech-icons">
+                            <Col xs={3} md={2} className="tech-icons">
                                 {skill.icon}
                                 <p style={{ fontSize: '12px' }}>{skill.title}</p>
                             </Col>

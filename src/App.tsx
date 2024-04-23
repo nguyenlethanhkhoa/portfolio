@@ -13,6 +13,7 @@ import NavBar from './component/navbar.component';
 import ScrollToTop from './layout/ScrollToTop';
 import Footer from './layout/Footer';
 import Home from './page/home';
+import Projects from './page/project';
 
 const App: React.FC = () => {
 	const [load, upadateLoad] = useState(true);
@@ -33,10 +34,8 @@ const App: React.FC = () => {
 				<ScrollToTop />
 				<Routes>
 					<Route path="/" element={<Home />} />
-					{/* <Route path="/project" element={<Projects />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/resume" element={<Resume />} />
-          <Route path="*" element={<Navigate to="/"/>} /> */}
+					<Route path="/project" element={<Projects />} />
+          			<Route path="*" element={<Navigate to="/"/>} />
 				</Routes>
 				<Footer />
 			</div>
