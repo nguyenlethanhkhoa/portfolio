@@ -32,91 +32,88 @@ import {
     SiKubernetes,
 } from "react-icons/si";
 
+interface ISkill {
+    title: string;
+    icon: any;
+}
+
+interface ITechStack {
+    title: string;
+    skills: ISkill[]
+}
+
+const TECH_STACK: ITechStack[] = [
+    {
+        title: 'Languages',
+        skills: [
+            { title: 'Python', icon: <DiPython /> },
+            { title: 'Javascript', icon: <DiJavascript1 /> },
+            { title: 'C#', icon: <TbBrandCSharp /> },
+            { title: 'NodeJs', icon: <DiNodejs /> },
+        ]
+    },
+    {
+        title: 'Frameworks',
+        skills: [
+            { title: 'ReactJs', icon: <DiReact /> },
+            { title: 'NextJs', icon: <SiNextdotjs /> },
+            { title: 'Angular', icon: <SiAngular /> },
+            { title: 'Django', icon: <DiDjango /> },
+            { title: 'Fast Api', icon: <SiFastapi /> },
+        ]
+    },
+    {
+        title: 'Data',
+        skills: [
+            { title: 'MongoDb', icon: <DiMongodb /> },
+            { title: 'Firebase', icon: <SiFirebase /> },
+            { title: 'Postgre', icon: <SiPostgresql /> },
+            { title: 'Cassandra', icon: <SiApachecassandra /> },
+            { title: 'RabbitMQ', icon: <SiRabbitmq /> },
+            { title: 'Kafka', icon: <SiApachekafka /> },
+            { title: 'Redis', icon: <SiRedis /> },
+            { title: 'Spark', icon: <DiSpark /> },
+            { title: 'Airflow', icon: <SiApacheairflow /> },
+        ]
+    },
+    {
+        title: 'CI/CD',
+        skills: [
+            { title: 'CircleCI', icon: <CgCircleci /> },
+            { title: 'Maven', icon: <SiApachemaven /> },
+            { title: 'Docker', icon: <DiDocker /> },
+            { title: 'Kubernetes', icon: <SiKubernetes /> },
+        ]
+    },
+    // {
+    //     title: 'DevOps',
+    //     skills: [
+    //         { title: 'CircleCI', icon: <CgCircleci /> },
+    //         { title: 'Maven', icon: <SiApachemaven /> },
+    //         { title: 'Docker', icon: <DiDocker /> },
+    //         { title: 'Kubernetes', icon: <SiKubernetes /> },
+    //     ]
+    // }
+]
+
 const Techstack: React.FC = () => {
     return (
         <Container>
-            <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
-                <Col xs={4} md={2} className="tech-icons">
-                    <DiPython />
-                </Col>
-                <Col xs={4} md={2} className="tech-icons">
-                    <DiJavascript1 />
-                </Col>
-                <Col xs={4} md={2} className="tech-icons">
-                    <TbBrandCSharp />
-                </Col>
-                {/* <Col xs={4} md={2} className="tech-icons">
-                <TbBrandGolang />
-            </Col> */}
-                <Col xs={4} md={2} className="tech-icons">
-                    <DiNodejs />
-                </Col>
-            </Row>
-            <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
-                <Col xs={4} md={2} className="tech-icons">
-                    <DiReact />
-                </Col>
-                <Col xs={4} md={2} className="tech-icons">
-                    <SiNextdotjs />
-                </Col>
-                <Col xs={4} md={2} className="tech-icons">
-                    <SiAngular />
-                </Col>
-                <Col xs={4} md={2} className="tech-icons">
-                    <DiDjango />
-                </Col>
-                <Col xs={4} md={2} className="tech-icons">
-                    <SiFastapi />
-                </Col>
-                {/* <Col xs={4} md={2} className="tech-icons">
-                    <SiSolidity />
-                </Col> */}
-            </Row>
-            <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
-                <Col xs={4} md={2} className="tech-icons">
-                    <DiMongodb />
-                </Col>
-                <Col xs={4} md={2} className="tech-icons">
-                    <SiFirebase />
-                </Col>
-                <Col xs={4} md={2} className="tech-icons">
-                    <SiPostgresql />
-                </Col>
-                <Col xs={4} md={2} className="tech-icons">
-                    <SiApachecassandra />
-                </Col>
-            </Row>
-            <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
-                <Col xs={4} md={2} className="tech-icons">
-                    <SiRabbitmq />
-                </Col>
-                <Col xs={4} md={2} className="tech-icons">
-                    <SiApachekafka />
-                </Col>
-                <Col xs={4} md={2} className="tech-icons">
-                    <SiRedis />
-                </Col>
-                <Col xs={4} md={2} className="tech-icons">
-                    <DiSpark />
-                </Col>
-                <Col xs={4} md={2} className="tech-icons">
-                    <SiApacheairflow />
-                </Col> 
-            </Row>
-            <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
-                <Col xs={4} md={2} className="tech-icons">
-                    <CgCircleci />
-                </Col>
-                <Col xs={4} md={2} className="tech-icons">
-                    <SiApachemaven />
-                </Col>
-                <Col xs={4} md={2} className="tech-icons">
-                    <DiDocker />
-                </Col>
-                <Col xs={4} md={2} className="tech-icons">
-                    <SiKubernetes />
-                </Col>
-            </Row>
+            {TECH_STACK.map((stack) => (
+                <>
+                    <h1 className="project-heading" style={{ fontSize: "1.6em" }}>
+                        {stack.title}
+                    </h1>
+                    <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+                        {stack.skills.map((skill) => (
+                            <Col xs={2} md={2} className="tech-icons">
+                                {skill.icon}
+                                <p style={{ fontSize: '12px' }}>{skill.title}</p>
+                            </Col>
+                        ))}
+                    </Row>
+                </>
+            ))}
         </Container>
     );
 }

@@ -6,7 +6,8 @@ const TypingAnimation: React.FC = () => {
     <Typewriter
       options={{
         strings: [
-          "Software Engineer",
+          "Fullstack Developer",
+          "Data Engineer",
           "Tech Consultant",
           "Freelancer",
         ],
