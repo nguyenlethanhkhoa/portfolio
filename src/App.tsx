@@ -14,6 +14,9 @@ import ScrollToTop from './layout/ScrollToTop';
 import Footer from './layout/Footer';
 import Home from './page/home';
 import Projects from './page/project';
+import BlogPage from './page/blog';
+import { Provider } from 'react-redux';
+import { makeStore } from './lib/store/app.store';
 
 const App: React.FC = () => {
 	const [load, upadateLoad] = useState(true);
@@ -27,19 +30,16 @@ const App: React.FC = () => {
 	}, []);
 
 	return (
-		<Router>
-			{/* <Preloader load={load} /> */}
-			<div className="App" id={load ? "no-scroll" : "scroll"}>
-				<NavBar />
-				<ScrollToTop />
+		<Provider store={makeStore()}>
+			<Router>
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route path="/project" element={<Projects />} />
-          			<Route path="*" element={<Navigate to="/"/>} />
+					<Route path="/blog" element={<BlogPage />} />
+					<Route path="*" element={<Navigate to="/" />} />
 				</Routes>
-				<Footer />
-			</div>
-		</Router>
+			</Router>
+		</Provider>
 	);
 }
 
