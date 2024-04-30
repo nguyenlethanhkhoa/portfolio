@@ -9,7 +9,6 @@ import CategoryList from "./category-list.component";
 const BlogLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
     return (
         <>
-            <NavBar />
             <Container style={{
                 marginTop: '95px'
             }}>

@@ -15,7 +15,7 @@ export interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = (props) => {
   return (
-    <Card className="project-card-view">
+    <Card className="project-card-view bordered">
       <Card.Img variant="top" src={props.imgPath} alt="card-img" />
       <Card.Body>
         <Card.Title>{props.title}</Card.Title>

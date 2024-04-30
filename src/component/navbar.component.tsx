@@ -15,6 +15,7 @@ import {
 } from "react-icons/ai";
 
 import { CgFileDocument } from "react-icons/cg";
+import { MdDashboard } from "react-icons/md";
 
 const NavBar: React.FC = () => {
   const [expand, updateExpanded] = useState<any>(false);
@@ -73,11 +74,19 @@ const NavBar: React.FC = () => {
             </Nav.Item>
             <Nav.Item>
               <Nav.Link
-                href="https://nguyenlethanhkhoa/blog"
-                target="_blank"
-                rel="noreferrer"
+                as={Link}
+                to="/blog"
               >
                 <ImBlog style={{ marginBottom: "2px" }} /> Blogs
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
+              <Nav.Link
+                as={Link}
+                to="/dashboard"
+              >
+                <MdDashboard style={{ marginBottom: "2px" }} /> Dashboard
               </Nav.Link>
             </Nav.Item>
 

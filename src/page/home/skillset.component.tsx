@@ -6,8 +6,8 @@ const SkillSet: React.FC = () => {
         <Container fluid className="about-section">
             <Row>
                 <Col md={12} className="home-about-description">
-                    <h1 style={{ fontSize: "2.6em" }}>
-                        PROFESSIONAL <span className="purple"> SKILLSET </span>
+                    <h1 className="title" style={{ fontSize: "2.6em" }}>
+                        PROFESSIONAL SKILLSET
                     </h1>
                 </Col>
             </Row>

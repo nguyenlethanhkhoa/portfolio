@@ -15,7 +15,7 @@ const Introduction: React.FC = () => {
             <Container>
                 <Row style={{ justifyContent: "center" }}>
                     <Col md={12} lg={8} className="home-about-description">
-                        <h1 style={{ fontSize: "2.6em" }}>
+                        <h1 className="title" style={{ fontSize: "2.6em" }}>
                             LET ME <span className="purple"> INTRODUCE </span> MYSELF
                         </h1>
                         <p className="home-about-body">

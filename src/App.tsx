@@ -17,27 +17,34 @@ import Projects from './page/project';
 import BlogPage from './page/blog';
 import { Provider } from 'react-redux';
 import { makeStore } from './lib/store/app.store';
+import PostPage from './page/dashboard/post.page';
+import DashboardLayout from './layout/dashboard';
+import PostForm from './component/post-form.component';
 
 const App: React.FC = () => {
-	const [load, upadateLoad] = useState(true);
-
-	useEffect(() => {
-		const timer = setTimeout(() => {
-			upadateLoad(false);
-		}, 1200);
-
-		return () => clearTimeout(timer);
-	}, []);
 
 	return (
 		<Provider store={makeStore()}>
 			<Router>
-				<Routes>
-					<Route path="/" element={<Home />} />
-					<Route path="/project" element={<Projects />} />
-					<Route path="/blog" element={<BlogPage />} />
-					<Route path="*" element={<Navigate to="/" />} />
-				</Routes>
+				<div>
+					<NavBar />
+					<Routes>
+						<Route path="/" element={<Home />} />
+						<Route path="/project" element={<Projects />} />
+						<Route path="/blog" element={<BlogPage />}>
+							<Route path=':slug' element={<BlogPage />} />
+						</Route>
+						<Route path="/dashboard" element={<DashboardLayout />}>
+							<Route path='/dashboard' element={<PostPage />} />
+							<Route path='/dashboard/create-post' element={<PostForm />} />
+							<Route path="/dashboard/post" element={<PostPage />}>
+								<Route path=':slug' element={<PostPage />} />
+							</Route>
+							{/* <Route path="/category" element={<CategoryPage />} /> */}
+						</Route>
+						<Route path="*" element={<Navigate to="/" />} />
+					</Routes>
+				</div>
 			</Router>
 		</Provider>
 	);

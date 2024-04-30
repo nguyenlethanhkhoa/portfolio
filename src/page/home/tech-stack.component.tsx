@@ -100,7 +100,7 @@ const Techstack: React.FC = () => {
         <Container>
             {TECH_STACK.map((stack) => (
                 <>
-                    <h1 className="project-heading" style={{ fontSize: "1.6em" }}>
+                    <h1 className="project-heading mt-4" style={{ fontSize: "1.6em" }}>
                         {stack.title}
                     </h1>
                     <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
