@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import homeLogo from "../../Assets/home-main.svg";
+import homeLogo from "../../Assets/home-main.png";
 import Introduction from "./introduction.component";
 import TypingAnimation from "../../component/TypingAnimation.component";
 import Particle from "./particle.component";
@@ -43,7 +43,11 @@ const Home: React.FC = () => {
 								src={homeLogo}
 								alt="home pic"
 								className="img-fluid"
-								style={{ maxHeight: "450px" }}
+								style={{
+									maxHeight: "400px", 
+									borderRadius: 500,
+									border: '5px solid var(--icon-color)'
+								}}
 							/>
 						</Col>
 					</Row>

@@ -72,7 +72,7 @@ const NavBar: React.FC = () => {
                 Projects
               </Nav.Link>
             </Nav.Item>
-            <Nav.Item>
+            {/* <Nav.Item>
               <Nav.Link
                 as={Link}
                 to="/blog"
@@ -88,7 +88,7 @@ const NavBar: React.FC = () => {
               >
                 <MdDashboard style={{ marginBottom: "2px" }} /> Dashboard
               </Nav.Link>
-            </Nav.Item>
+            </Nav.Item> */}
 
             <Nav.Item className="fork-btn">
               <Button
